@@ -4,7 +4,7 @@ function Hello({ products }) {
     
   return (
     <div><center>
-      <h2>Product List</h2>
+      <h2>Product List2</h2>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
