@@ -30,8 +30,7 @@ const FetchRegistrations = () => {
               <td>{item.name}</td>
               <td>{item.role}</td>
               <td>{item.email}</td>
-              <td>{item.password}</td>
-              {/* Map more columns if necessary */}
+              <td>{item.password}</td>             
             </tr>
        ))}      
       </table>
