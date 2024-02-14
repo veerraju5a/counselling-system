@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-
 const FetchRegistrations = () => {
  const [res,setRes]=useState([])
- 
  useEffect(()=>{
  axios.get('http://localhost:8080/retrieve')
  .then(response=>{
@@ -14,8 +12,7 @@ const FetchRegistrations = () => {
 
   return (
     <div><center><h1>Registrations</h1>
-    <table border={1}>
-        
+    <table border={1}>        
           <tr>
           <th>ID</th>
             <th>Name</th>
