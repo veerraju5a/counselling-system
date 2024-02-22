@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const {MongoClient} = require('mongodb')
+const {MongoClient, ObjectId} = require('mongodb')
 
 const app=express()
 
@@ -17,11 +17,22 @@ col.insertOne(req.body)
 console.log(req.body)
 res.send('Inserted successfully')
 })
-
 app.get('/retrieve', async (req, res)=>{
     const result= await col.find().toArray()
     console.log(result)
     res.send(result)
+})
+app.put('/users/:id', async (req,res)=>{
+    const {id}=req.params
+    const {name, role, email, password}=req.body
+    const result=col.updateOne({_id: new ObjectId(id)},
+     {$set: {name, role, email, password}})
+     res.send('updated')
+})
+app.delete('/users/:id', async (req,res)=>{
+    const {id}=req.params
+    const result= await col.deleteOne({_id: new ObjectId(id)})
+    res.json({message: "deleted successfully"})
 })
 
 app.get('/', (req,res)=>{

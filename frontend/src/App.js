@@ -8,6 +8,7 @@ import Visitor from './components/Visitor'
 import Counsellor from './components/Counsellor'
 import Appointment from './components/Appointment'
 import FetchRegistrations from "./components/FetchRegistrations";
+import Success from "./components/Success";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/counsellor" element={<Counsellor/>} exact />
         <Route path="/visitor" element={<Visitor/>} exact />
         <Route path="/fetchregistrations" element={<FetchRegistrations/>} exact />
+        <Route path="/success" element={<Success/>} exact />
         <Route path="/appointment" element={<Appointment/>} exact />
       </Routes>
     </main>
